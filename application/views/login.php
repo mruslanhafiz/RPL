@@ -53,6 +53,17 @@
   <body>
     <div class="container">
       <form class="form-signin">
+        <h2>
+          <font color='red'>
+            <?php
+            if(isset($_GET['status'])) 
+            {
+              if($_GET['status'] == "blmlgn") 
+              echo "WARNING : Anda Belum Login";  
+            }
+            ?>
+          </font>
+        </h2>
         <h2 class="form-signin-heading">LOGIN</h2>
         <input type="text" class="form-control" placeholder="Email address">
         <input type="password" class="form-control" placeholder="Password">

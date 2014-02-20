@@ -11,6 +11,14 @@
   </head>
   
   <body>
+  <?php 
+  if(isset($_POST['btLogin'])) 
+  {
+    echo $_POST['username'];
+  }
+  else header("Location:login?status=blmlgn"); 
+                          
+  ?>
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>
