@@ -11,14 +11,6 @@
   </head>
   
   <body>
-    <?php //pembuka tag php
-  /*if(isset($_POST['btLogin'])) //memeriksa apakah btLogin telah diberi nilai sebelumnya.
-  {
-    echo $_POST['username']; //mencetak nilai yang telah dimasukkan user ke textbox username pada halaman login
-  }
-  else header("Location:login?status=blmlgn"); //jika btLogin belum pernah ditekan (belum login), 
-    */                      // maka akan redirect ke halaman login.
-?>
 
     <div class="container-fluid">
       <div class="jumbotron">

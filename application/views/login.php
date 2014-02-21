@@ -70,6 +70,7 @@
   
   <body>
 
+ 
     <div class="form-signin">
       
         <h2 class="form-signin-heading">LOGIN</h2>
@@ -83,6 +84,7 @@
         <button value="Login" name="submit"class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         
        </div>
+
     <!-- /container -->
   </body>
 
