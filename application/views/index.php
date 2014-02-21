@@ -12,11 +12,7 @@
   
   <body>
   <?php 
-  if(isset($_POST['btLogin'])) 
-  {
-    echo $_POST['username'];
-  }
-  else header("Location:login?status=blmlgn"); 
+  
                           
   ?>
     <div class="container-fluid">
@@ -28,7 +24,15 @@
     </div>
     <div class="container">
       <nav>
-        <table class="table table-hover table-bordered">
+        <?php
+        $con=mysqli_connect("localhost","root","root","rpl");
+        if (mysqli_connect_errno())
+        {
+          echo "Failed to connect : ". mysqli_connect_error();
+        }
+        $result = mysqli_query($con,"select * from data_pc");
+        
+        echo "<table class='table table-hover table-bordered'>
           <thead>
             <tr>
               <th>#</th>
@@ -39,100 +43,43 @@
               <th>Booked By</th>
               <th>State</th>
             </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Michael</td>
-              <td>Windows 8, Intel Core i3, RAM 4GB, Monitor 14" wide</td>
-              <td>Michael</td>
-              <td>No</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jake</td>
-              <td>Windows 8.1, Intel Core i5, RAM 4GB, Monitor 14" wide</td>
-              <td>Jake</td>
-              <td>No</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Gerrard</td>
-              <td>Windows 7 Ultimate, Intel Core 2 Duo, RAM 4GB, Monitor 14" wide</td>
-              <td>Gerrard</td>
-              <td>Yes</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Coutinho</td>
-              <td>Windows 8.1, Intel Core i3, RAM 4GB, Monitor 14" wide</td>
-              <td>Coutinho</td>
-              <td>Yes</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Suarez</td>
-              <td>Windows 8.1, Intel Core i7, RAM 4GB, Monitor 14" wide</td>
-              <td>Suarez</td>
-              <td>No</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Sterling</td>
-              <td>Windows XP, Intel Pentium IV, RAM 2GB, Monitor 14" wide</td>
-              <td>Sterling</td>
-              <td>No</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Sturridge</td>
-              <td>Windows 8, Intel Core i3, RAM 2GB, Monitor 14" wide</td>
-              <td>Sturridge</td>
-              <td>No</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Flanagan</td>
-              <td>Windows 8, Intel Core i3, RAM 2GB, Monitor 14" wide</td>
-              <td>Flanagan</td>
-              <td>Yes</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Ronaldo</td>
-              <td>Windows 8, Intel Core i3, RAM 4GB, Monitor 14" wide</td>
-              <td>Ronaldo</td>
-              <td>No</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Messi</td>
-              <td>Windows 8, Ubuntu 13.04, Intel Core i3, RAM 4GB, Monitor 14" wide</td>
-              <td>Messi</td>
-              <td>Yes</td>
-              <td></td>
-              <td>Offline</td>
-            </tr>
-          </tbody>
-        </table>
+          </thead>";
+          echo "<tbody>";
+          $num = 1;
+          while ($row = mysqli_fetch_array($result))
+          {
+            if($row['booked'] == 1)
+            {
+              $temp_book = "Yes";
+            }
+            else
+            {
+              $temp_book = "No";
+            }
+            if($row['state'] == 1)
+            {
+              $temp_state = "Online";
+            }
+            else
+            {
+              $temp_state = "Offline";
+            }
+            echo "<tr>";
+            echo "<td>" . $num . "</td>";
+            echo "<td>" . $row['nama_pc'] . "</td>";
+            echo "<td>" . $row['spek'] . "</td>";
+            echo "<td>" . $row['owner'] . "</td>";
+            echo "<td>" . $row['booked'] . "</td>";
+            echo "<td>" . $row['booked_by'] . "</td>";
+            echo "<td>" . $row['state'] . "</td>";
+            echo "</tr>";
+            $num++;
+          }
+          echo "</tbody>";
+          echo "</table>";
+
+          mysqli_close($con);
+          ?>
       </nav>
       <div class="panel panel-default"></div>
     </div>
