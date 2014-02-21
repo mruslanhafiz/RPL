@@ -23,7 +23,15 @@
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>
-        <a href="#" >logout</a>
+        <?php
+        $sess = $this->session->userdata('username');
+        echo "<h3>".$sess."</h3>";
+        echo "<pre>";
+        print_r ($this->session->all_userdata());
+        echo "</pre>";
+        ?>
+        
+        <a href='<?php echo base_url()."LoginController/logout" ?>' >logout</a>
         <p class="text-success">Laboratorium RPL</p>
         <div class="alert alert-warning" style>
            <b>BETA </b> 
