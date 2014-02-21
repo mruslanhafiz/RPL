@@ -14,6 +14,7 @@
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>
+        <a href="#" >logout</a>
         <p class="text-success">Laboratorium RPL</p>
         <p></p>
       </div>

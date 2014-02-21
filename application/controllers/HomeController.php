@@ -18,5 +18,7 @@ class HomeController extends CI_Controller{
     {
     	echo "hola";
     }
+
+    
 }
 ?>
