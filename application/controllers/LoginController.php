@@ -17,12 +17,12 @@ class LoginController extends CI_Controller{
             if($this->form_validation->run()==false){
                 $this->load->view('login');
             }else{
-                $data = array(
+               /* $data = array(
                   'username' => $this->input->post('username'),
                   'is_logged_in' => 1
                 );
                 $this->session->set_userdata($data);
-                redirect('HomeController/index');
+                */redirect('HomeController/main');
             }
             
         }
