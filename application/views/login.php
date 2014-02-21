@@ -56,7 +56,7 @@
         <h2>
           <font color='red'>
             <?php
-            
+
             if(isset($_GET['status'])) 
             {
               if($_GET['status'] == "blmlgn") 
@@ -66,7 +66,7 @@
           </font>
         </h2>
         <h2 class="form-signin-heading">LOGIN</h2>
-        <input type="text" class="form-control" placeholder="Email address">
+        <input type="text" class="form-control" placeholder="Username">
         <input type="password" class="form-control" placeholder="Password">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
