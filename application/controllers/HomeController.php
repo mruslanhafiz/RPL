@@ -52,5 +52,7 @@ class HomeController extends CI_Controller{
     	//$this->load->helper('User');
     	echo "hola";
     }
+
+    
 }
 ?>

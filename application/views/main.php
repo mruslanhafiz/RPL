@@ -11,6 +11,7 @@
   </head>
   
   <body>
+<<<<<<< HEAD
     <?php //pembuka tag php
   /*if(isset($_POST['btLogin'])) //memeriksa apakah btLogin telah diberi nilai sebelumnya.
   {
@@ -19,9 +20,13 @@
   else header("Location:login?status=blmlgn"); //jika btLogin belum pernah ditekan (belum login), 
     */                      // maka akan redirect ke halaman login.
 ?>
+=======
+      
+>>>>>>> fb2a1812b7b8e7cdb10f47f9fa2d369c094ec270
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>
+        <a href="#" >logout</a>
         <p class="text-success">Laboratorium RPL</p>
         <div class="alert alert-dismissable alert-warning" style>
           <button type="button" class="close" data-dismiss="alert">&times;</button>

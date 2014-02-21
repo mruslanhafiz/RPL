@@ -11,10 +11,14 @@
   </head>
   
   <body>
+<<<<<<< HEAD
   <?php 
   
                           
   ?>
+=======
+
+>>>>>>> fb2a1812b7b8e7cdb10f47f9fa2d369c094ec270
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>

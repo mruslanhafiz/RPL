@@ -26,6 +26,7 @@
         font-weight: normal;
       }
       .form-signin .form-control {
+        max-width: 330px;
         position: relative;
         font-size: 16px;
         height: auto;
@@ -35,6 +36,19 @@
         box-sizing: border-box;
       }
       .form-signin .form-control:focus {
+        z-index: 2;
+      }
+       .form-control {
+        max-width: 330px;
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .form-control:focus {
         z-index: 2;
       }
       .form-signin input[type="text"] {
@@ -47,10 +61,15 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
+      btn btn-lg btn-primary btn-block{
+          max-width: 330px;
+      }
+       
     </style>
   </head>
   
   <body>
+<<<<<<< HEAD
     <div class="container">
       <form class="form-signin">
         <h2>
@@ -71,6 +90,21 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
     </div>
+=======
+    <div class="form-signin">
+      
+        <h2 class="form-signin-heading">LOGIN</h2>
+        
+        <?php echo validation_errors(); ?>
+        
+        <?php echo form_open('LoginController/loginValidation'); ?>
+        
+        <input type="text" class="form-control" placeholder="Username" name="username">
+        <input type="password" class="form-control" placeholder="Password" name="password">
+        <button value="Login" name="submit"class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        
+       </div>
+>>>>>>> fb2a1812b7b8e7cdb10f47f9fa2d369c094ec270
     <!-- /container -->
   </body>
 
