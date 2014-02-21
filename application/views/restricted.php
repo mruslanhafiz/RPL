@@ -71,15 +71,8 @@
   <body>
     <div class="form-signin">
       
-        <h2 class="form-signin-heading">LOGIN</h2>
-      
-        <?php echo validation_errors(); ?>
+        <h2 class="form-signin-heading">ye hav ta LOGIN first</h2>
         
-        <?php echo form_open('LoginController/loginValidation'); ?>
-        
-        <input type="text" class="form-control" placeholder="Username" name="username">
-        <input type="password" class="form-control" placeholder="Password" name="password">
-        <button value="Login" name="submit"class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         
        </div>
     <!-- /container -->

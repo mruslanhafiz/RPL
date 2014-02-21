@@ -14,8 +14,19 @@ class HomeController extends CI_Controller{
 
 	public function main()
 	{
-		$this->load->view('main');
+             if($this->session->userdata('is_logged_in')){
+                 $this->load->view('main');
+             }else{
+                 redirect('HomeController/restricted');
+             }
+		
 	}
+        
+        public function restricted(){
+            $this->load->view('restricted');
+        }
+        
+      
 
 	public function bookings()
 	{

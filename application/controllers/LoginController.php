@@ -7,8 +7,20 @@ class LoginController extends CI_Controller{
 	}
 
 	public function login(){
+            $this->session->sess_destroy();
             $this->load->view('login');
 	}
+        
+        public function main()
+	{
+             if($this->session->userdata('is_logged_in')){
+                 $this->load->view('main');
+             }else{
+                 redirect('HomeController/restricted');
+             }
+		
+	}
+        
         
         public function loginValidation(){
             $this->form_validation->set_rules('username','Username','required|valid_username');
@@ -17,12 +29,12 @@ class LoginController extends CI_Controller{
             if($this->form_validation->run()==false){
                 $this->load->view('login');
             }else{
-               /* $data = array(
+                $data = array(
                   'username' => $this->input->post('username'),
                   'is_logged_in' => 1
                 );
                 $this->session->set_userdata($data);
-                */redirect('HomeController/main');
+                redirect('HomeController/main');
             }
             
         }
@@ -40,6 +52,10 @@ class LoginController extends CI_Controller{
             }
         }
 	
+          public function logout(){
+            $this->session->sess_destroy();
+            redirect('LoginController/login');
+        }
 	
 }
 
