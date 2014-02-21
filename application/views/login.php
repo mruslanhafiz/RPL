@@ -69,28 +69,8 @@
   </head>
   
   <body>
-<<<<<<< HEAD
-    <div class="container">
-      <form class="form-signin">
-        <h2>
-          <font color='red'>
-            <?php
 
-            if(isset($_GET['status'])) 
-            {
-              if($_GET['status'] == "blmlgn") 
-              echo "WARNING : Anda Belum Login";  
-            }
-            ?>
-          </font>
-        </h2>
-        <h2 class="form-signin-heading">LOGIN</h2>
-        <input type="text" class="form-control" placeholder="Username">
-        <input type="password" class="form-control" placeholder="Password">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-    </div>
-=======
+ 
     <div class="form-signin">
       
         <h2 class="form-signin-heading">LOGIN</h2>
@@ -104,7 +84,7 @@
         <button value="Login" name="submit"class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         
        </div>
->>>>>>> fb2a1812b7b8e7cdb10f47f9fa2d369c094ec270
+
     <!-- /container -->
   </body>
 
