@@ -11,10 +11,22 @@
   </head>
   
   <body>
+    <?php //pembuka tag php
+  if(isset($_POST['btLogin'])) //memeriksa apakah btLogin telah diberi nilai sebelumnya.
+  {
+    echo $_POST['username']; //mencetak nilai yang telah dimasukkan user ke textbox username pada halaman login
+  }
+  else header("Location:login?status=blmlgn"); //jika btLogin belum pernah ditekan (belum login), 
+                          // maka akan redirect ke halaman login.
+?>
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>
         <p class="text-success">Laboratorium RPL</p>
+        <div class="alert alert-dismissable alert-warning" style>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <b>BETA </b> 
+        </div>
         <p></p>
       </div>
     </div>
@@ -126,8 +138,22 @@
           </tbody>
         </table>
       </nav>
-    </div>
-    <div></div>
+      <nav>
+        <select class="form-control">
+          <option></option>
+          <option>PC #1</option>
+          <option>PC #2</option>
+          <option>PC #3</option>
+          <option>PC #4</option>
+          <option>PC #5</option>
+          <option>PC #6</option>
+          <option>PC #7</option>
+          <option>PC #8</option>
+          <option>PC #9</option>
+          <option>PC #10</option>
+        </select>
+      </nav>
+    </div><br>
     <div class="container">
       <nav>
         <div class="panel panel-default">
@@ -143,7 +169,11 @@
         </div>
       </nav>
     </div>
-    <div class="container"></div>
+    <div class="container">
+      <aside>
+        <a class="btn btn-block btn-warning">Tambah PC</a>
+      </aside>
+    </div><br>
     <div class="container">
       <nav>
         <div class="progress active progress-striped progress-info">
@@ -157,7 +187,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="alert alert-warning alert-dismissable">Copyright RPL 2014
+      <div class="alert alert-dismissable alert-info">Copyright RPL 2014
         <button type="button" class="close" data-dismiss="alert"></button>
       </div>
     </div>

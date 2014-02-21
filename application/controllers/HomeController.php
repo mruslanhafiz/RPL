@@ -27,6 +27,11 @@ class HomeController extends CI_Controller{
 		$this->load->view('login');
 	}
 
+	public function cekLogin()
+	{
+		
+	}
+
 	public function tambahPC()
 	{
 		$this->load->view('tambah_PC');
@@ -44,6 +49,7 @@ class HomeController extends CI_Controller{
 
     public function testing()
     {
+    	//$this->load->helper('User');
     	echo "hola";
     }
 }

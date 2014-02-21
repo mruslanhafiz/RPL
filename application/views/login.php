@@ -56,6 +56,7 @@
         <h2>
           <font color='red'>
             <?php
+            
             if(isset($_GET['status'])) 
             {
               if($_GET['status'] == "blmlgn") 
