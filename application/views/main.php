@@ -11,7 +11,6 @@
   </head>
   
   <body>
-<<<<<<< HEAD
     <?php //pembuka tag php
   /*if(isset($_POST['btLogin'])) //memeriksa apakah btLogin telah diberi nilai sebelumnya.
   {
@@ -20,16 +19,13 @@
   else header("Location:login?status=blmlgn"); //jika btLogin belum pernah ditekan (belum login), 
     */                      // maka akan redirect ke halaman login.
 ?>
-=======
-      
->>>>>>> fb2a1812b7b8e7cdb10f47f9fa2d369c094ec270
+
     <div class="container-fluid">
       <div class="jumbotron">
         <h1>Peminjaman PC</h1>
         <a href="#" >logout</a>
         <p class="text-success">Laboratorium RPL</p>
-        <div class="alert alert-dismissable alert-warning" style>
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div class="alert alert-warning" style>
            <b>BETA </b> 
         </div>
         <p></p>
@@ -96,29 +92,41 @@
 
       </nav>
       <nav>
-        <select class="form-control">
-          <option></option>
-          <option>PC #1</option>
-          <option>PC #2</option>
-          <option>PC #3</option>
-          <option>PC #4</option>
-          <option>PC #5</option>
-          <option>PC #6</option>
-          <option>PC #7</option>
-          <option>PC #8</option>
-          <option>PC #9</option>
-          <option>PC #10</option>
+        <?php
+        $con=mysqli_connect("localhost","root","root","rpl");
+        if (mysqli_connect_errno())
+        {
+          echo "Failed to connect : ". mysqli_connect_error();
+        }
+        $result = mysqli_query($con,"select nama_pc from data_pc where booked=0");
+
+        echo "<select class='form-control'>";
+        echo "<option></option>";
+        while($row = mysqli_fetch_array($result))
+        {
+          echo "<option>" . $row['nama_pc'] . "</option>";
+        }
+        ?>
         </select>
+        <input type="hidden" name="country" id="country_hidden">
+
+        <script>
+          $(document).ready(function() {
+            $("#itemType_id").change(function(){
+              $("#country_hidden").val(("#itemType_id").find(":selected").text());
+            });
+          });
+        </script>
       </nav>
     </div><br>
     <div class="container">
       <nav>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <a class="btn btn-block btn-success">Pinjam</a>
+            <a href= <?php echo "bookings"; ?> class="btn btn-block btn-success">Pinjam</a>
           </div>
           <div class="panel-body">
-            <a class="btn btn-primary btn-block">Update</a>
+            <a href= <?php echo "updatePC"; ?> class="btn btn-primary btn-block">Update</a>
           </div>
           <div class="panel-footer">
             <a class="btn btn-block btn-danger">Hapus</a><a></a>
@@ -128,7 +136,7 @@
     </div>
     <div class="container">
       <aside>
-        <a class="btn btn-block btn-warning">Tambah PC</a>
+        <a href= <?php echo "tambahPC"; ?> class="btn btn-block btn-warning">Tambah PC</a>
       </aside>
     </div><br>
     <div class="container">
