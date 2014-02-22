@@ -22,6 +22,7 @@ class HomeController extends CI_Controller{
 		
 	}
         
+      
         public function restricted(){
             $this->load->view('restricted');
         }

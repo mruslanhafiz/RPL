@@ -13,16 +13,7 @@
   <body>
     <div class="container">
       <h1>Book Form</h1>
-      <form action= <?php /*
-      $con=mysqli_connect("localhost","root","root","rpl");
-        if (mysqli_connect_errno())
-        {
-          echo "Failed to connect : ". mysqli_connect_error();
-        }
-        mysqli_query($con,"insert into data_pc 
-          (nama_user, hp_user, email_user, tanggal_pinjam)
-          values ('" . $nama . "','" . nama . "','" . nama . "','" . nama . "','" . nama . "');");
-      echo "main"*/?>>
+      <?php echo form_open('BookingController/booking_validation');?>
       <div class="form-group">
         <label class="control-label">Nama</label>
         <div class="controls">
@@ -42,12 +33,20 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="control-label">tanggal pinjam</label>
+        <div class="controls">
+          <input type="date" class="form-control" name="date">
+        </div>
+      </div>
+      <div class="form-group">
         <label class="control-label">Email</label>
         <div class="controls">
           <input type="text" class="form-control" name="email">
-        </div><br>
+        </div>
+        
+        <br>
         <div class="controls">
-          <input type="submit" class="btn btn-primary" value="Submit">
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit">
         </div>
       </div>
     </form>
