@@ -100,7 +100,7 @@
         }
         $result = mysqli_query($con,"select nama_pc from data_pc where booked=0");
 
-        echo "<select class='form-control'>";
+        echo "<select class='form-control' name='dropdown'>";
         echo "<option></option>";
         while($row = mysqli_fetch_array($result))
         {
@@ -108,15 +108,7 @@
         }
         ?>
         </select>
-        <input type="hidden" name="country" id="country_hidden">
 
-        <script>
-          $(document).ready(function() {
-            $("#itemType_id").change(function(){
-              $("#country_hidden").val(("#itemType_id").find(":selected").text());
-            });
-          });
-        </script>
       </nav>
     </div><br>
     <div class="container">
@@ -126,6 +118,7 @@
             <a href= <?php echo "bookings"; ?> class="btn btn-block btn-success">Pinjam</a>
           </div>
           <div class="panel-body">
+            <?php $selected_value = $this->input->post('dropdown'); ?>
             <a href= <?php echo "updatePC"; ?> class="btn btn-primary btn-block">Update</a>
           </div>
           <div class="panel-footer">
