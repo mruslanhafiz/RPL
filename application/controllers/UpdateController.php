@@ -9,13 +9,14 @@ class UpdateController extends CI_Controller
 
 	public function updatePC_validaton()
 	{
-		$this->load->library('form_validaton');
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
 
-		$this->form_validaton->set_rules('nama','nama_pc','required');
-		$this->form_validaton->set_rules('spek','spek','required');
-		$this->form_validaton->set_rules('pemilik','owner','required');
+		$this->form_validation->set_rules('nama','nama_pc','required');
+		$this->form_validation->set_rules('spek','spek','required');
+		$this->form_validation->set_rules('pemilik','owner','required');
 
-		if ($this->form_validaton->run() == false)
+		if ($this->form_validation->run() == false)
 		{
 			echo "gagal bro";
 		}

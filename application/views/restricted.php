@@ -3,7 +3,7 @@
 <html>
   
   <head>
-    <title>Sign In</title>
+    <title>Redirecting...</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -72,7 +72,10 @@
     <div class="form-signin">
       
         <h2 class="form-signin-heading">ye hav ta LOGIN first</h2>
-        
+        You are being automatically redirected to a new location.<br />
+        If your browser does not redirect you in 5 seconds, or you do
+        not wish to wait, <a href="<?php echo "login" ?>">click here</a>
+        <?php header('Refresh: 5; URL=login'); ?>
         
        </div>
     <!-- /container -->

@@ -51,7 +51,9 @@ class HomeController extends CI_Controller{
 
 	public function updatePC()
 	{
-		$this->load->view('update_PC');
+		$selected_value = $this->input->post('dropdown');
+		echo "a : " . $selected_value;
+		//$this->load->view('update_PC');
 	}
 
     public function method($a = 'jkl', $z = 'nnnn')

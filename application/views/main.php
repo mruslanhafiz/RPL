@@ -92,6 +92,7 @@
 
       </nav>
       <nav>
+        <form method="POST" action="<?php echo $this->base_url();?>/HomeController/updatePC">
         <?php
         $con=mysqli_connect("localhost","root","root","rpl");
         if (mysqli_connect_errno())
@@ -118,14 +119,14 @@
             <a href= <?php echo "bookings"; ?> class="btn btn-block btn-success">Pinjam</a>
           </div>
           <div class="panel-body">
-            <?php $selected_value = $this->input->post('dropdown'); ?>
-            <a href= <?php echo "updatePC"; ?> class="btn btn-primary btn-block">Update</a>
+            <input type="submit" class="btn btn-primary btn-block" value="Update">
           </div>
           <div class="panel-footer">
             <a class="btn btn-block btn-danger">Hapus</a><a></a>
           </div>
         </div>
       </nav>
+    </form>
     </div>
     <div class="container">
       <aside>
