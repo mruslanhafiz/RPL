@@ -13,7 +13,10 @@
   <body>
     <div class="container">
       <h1>Book Form</h1>
-      <?php echo form_open('BookingController/booking_validation');?>
+      <?php echo validation_errors(); ?> 
+      
+      <?php echo form_open('BookingController/booking_validation'); ?>
+      
       <div class="form-group">
         <label class="control-label">Nama</label>
         <div class="controls">

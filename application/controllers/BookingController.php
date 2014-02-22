@@ -15,11 +15,25 @@ class BookingController extends CI_Controller{
                 $this->form_validation->set_rules('email','Email','required|trim|valid_email');
                 
                 if($this->form_validation->run() ){
-                    echo"pass";
+                    $data = array(
+                        'nama_user' => $this->input->post('nama'),
+                        'hp_user' => $this->input->post('hp'),
+                        'email_user' => $this->input->post('date'),
+                        'tanggal_pinjam' => $this->input->post('email'),
+                        'nrp' => $this->input->post('nrp'),
+                    );
+                    $this->load->model('BookingModel');
+                    $this->BookingModel->addBookings($data);
+                    redirect('HomeController/main');
                 }else{
                     echo"you shall not pass";
+                    
+                    $this->load->view('bookings');
                 }
         }
+        
+     
+        
 
  }
 ?>
