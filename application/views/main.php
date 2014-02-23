@@ -115,7 +115,7 @@
       <nav>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <a href= <?php echo "bookings"; ?> class="btn btn-block btn-success">Pinjam</a>
+            <a href= <?php echo "bookings"; ?>  class="btn btn-block btn-success" >Pinjam</a>
           </div>
           <div class="panel-body">
             <?php $selected_value = $this->input->post('dropdown'); ?>

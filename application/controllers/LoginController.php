@@ -47,7 +47,9 @@ class LoginController extends CI_Controller{
             if($this->LoginModel->login($username,$password)){
                 return true;
             }else{
-                $this->form_validation->set_message('verifyUser','incorrect Username or Password, please try again');
+                $this->form_validation->set_message('verifyUser', '<div class="alert alert-warning alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Warning!</strong> username atau password salah.</div>');
                 return false;
             }
         }

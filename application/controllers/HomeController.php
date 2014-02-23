@@ -31,7 +31,8 @@ class HomeController extends CI_Controller{
 
 	public function bookings()
 	{
-		$this->load->view('bookings');
+		//$this->load->view('bookings');
+            redirect('BookingController/booking/'.$result);
 	}
 
 	public function login()

@@ -4,7 +4,11 @@ class BookingController extends CI_Controller{
 	public function __construct() {
 		parent::__construct();
 	}
-
+        
+        public function booking(){
+            $this->load->view('bookings');
+           // echo $pcName;
+        }
 	public function booking_validation(){
 		$this->load->library('form_validation');
                 
@@ -26,7 +30,10 @@ class BookingController extends CI_Controller{
                     $this->BookingModel->addBookings($data);
                     redirect('HomeController/main');
                 }else{
-                    echo"you shall not pass";
+                    echo"<div class='alert alert-warning alert-dismissable'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <strong>Warning!</strong> data belum lengkap.
+                  </div>";
                     
                     $this->load->view('bookings');
                 }
