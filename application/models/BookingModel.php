@@ -2,14 +2,17 @@
 
 class BookingModel extends CI_Model{
     
-	public function addBookings($data){
+	public function addBookings($data,$id){
             $this->db->insert('user',$data);
         }
-        
-        public function updateBookings($data,$id){
-            $this->db->data('id',$id);
-            $this->db->update('user',$data);
-        }
+            /*
+            $this->db->where('id',$id);
+            $data2 = array(
+                        'booked' => $this->input->post(1),
+                        'booked_by'=> $this->inpu->post('')
+                    );
+            $this->db->update('user',$data2);
+        }*/
 }
 
 ?>

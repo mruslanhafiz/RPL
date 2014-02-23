@@ -41,6 +41,9 @@
           <input type="date" class="form-control" name="date">
         </div>
       </div>
+      
+      
+      
       <div class="form-group">
         <label class="control-label">Email</label>
         <div class="controls">

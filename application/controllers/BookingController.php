@@ -26,6 +26,7 @@ class BookingController extends CI_Controller{
                         'tanggal_pinjam' => $this->input->post('email'),
                         'nrp' => $this->input->post('nrp'),
                     );
+                   // $id = array'id_pc' => $this->input->post('id_pc');
                     $this->load->model('BookingModel');
                     $this->BookingModel->addBookings($data);
                     redirect('HomeController/main');
