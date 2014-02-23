@@ -13,28 +13,29 @@
   <body>
     <div class="container">
       <h1>Tambah PC</h1>
+      <?php echo form_open('TambahController/tambah_validation'); ?>
       <div class="form-group">
         <label class="control-label">Nama PC</label>
         <div class="controls">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="nama">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label">Spesifikasi</label>
         <div class="controls">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="spek">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label">Pemilik&nbsp;</label>
         <div class="controls">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="pemilik">
         </div>
       </div>
       <div class="form-group">
         <div class="controls"></div><br>
         <div class="controls">
-          <a class="btn btn-primary">Submit</a>
+          <input type="submit" class="btn btn-primary" value="Submit">
         </div>
       </div>
     </div>

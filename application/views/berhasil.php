@@ -71,11 +71,11 @@
   <body>
     <div class="form-signin">
       
-        <h2 class="form-signin-heading">ye hav ta LOGIN first</h2>
-        You are being automatically redirected to a new location.<br />
+        <h2 class="form-signin">Penambahan PC Berhasil!</h2>
+        <br />
         If your browser does not redirect you in 5 seconds, or you do
-        not wish to wait, <a href="<?php echo "login" ?>">click here</a>
-        <?php header('Refresh: 5; URL=login'); ?>
+        not wish to wait, <a href="<?php echo "main" ?>">click here</a>
+        <?php header('Refresh: 5; URL=main'); ?>
         
        </div>
     <!-- /container -->
