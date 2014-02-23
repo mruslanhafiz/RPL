@@ -15,9 +15,8 @@
       <h1>Update PC</h1>
       <?php
       //echo "<h1>" . $search . "</h1>"
-      $input['namaParse'] = $search;
       ?>
-      <?php echo form_open('UpdateController/updatePC_validaton', $input); ?>
+      <?php echo form_open('UpdateController/updatePC_validaton', $search); ?>
       <div class="form-group">
         <label class="control-label">Nama PC</label>
         <div class="controls">

@@ -9,7 +9,6 @@ class UpdateController extends CI_Controller
 
 	public function updatePC_validaton()
 	{
-		$masuk['lagi'] = $namaParse;
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('nama','nama_pc','required');
@@ -24,7 +23,7 @@ class UpdateController extends CI_Controller
                         'booked' => 'false',
                     );
                     $this->load->model('UpdateModel');
-                    $this->UpdateModel->updatePC($data, $masuk);
+                    $this->UpdateModel->updatePC($data, $search);
                     redirect('HomeController/berhasil');
                 }else{
                     echo"tidak lengkap bro";
